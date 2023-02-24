@@ -4,6 +4,8 @@
  */
 package Proyecto_PvZ;
 
+import javax.swing.JProgressBar;
+
 /**
  *
  * @author luism
@@ -15,6 +17,10 @@ public class PvZ extends javax.swing.JFrame {
      */
     public PvZ() {
         initComponents();
+        jLLoadingBar2.setVisible(false);
+        jLLoadingBar3.setVisible(false);
+        
+        
     }
 
     /**
@@ -26,37 +32,64 @@ public class PvZ extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPStartScreen = new javax.swing.JPanel();
+        jPLoadingScreen = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPBLoading = new javax.swing.JProgressBar();
+        jLLoadingBar1 = new javax.swing.JLabel();
+        jLLoadingBar2 = new javax.swing.JLabel();
+        jLLoadingBar3 = new javax.swing.JLabel();
+        jLLoadingScreenBG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/88298011cbb1b92aa9d2c1c7d9c1edf3 (1).jpg"))); // NOI18N
+        jPLoadingScreen.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPLoadingScreen.setPreferredSize(new java.awt.Dimension(1920, 800));
+        jPLoadingScreen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPStartScreenLayout = new javax.swing.GroupLayout(jPStartScreen);
-        jPStartScreen.setLayout(jPStartScreenLayout);
-        jPStartScreenLayout.setHorizontalGroup(
-            jPStartScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPStartScreenLayout.setVerticalGroup(
-            jPStartScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jLabel1.setFont(new java.awt.Font("Elephant", 1, 14)); // NOI18N
+        jLabel1.setText("Loading...");
+        jPLoadingScreen.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 360, 90, -1));
+
+        jPBLoading.setBackground(new java.awt.Color(0, 0, 0));
+        jPBLoading.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jPBLoading.setForeground(new java.awt.Color(0, 0, 0));
+        jPBLoading.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jPBLoadingStateChanged(evt);
+            }
+        });
+        jPLoadingScreen.add(jPBLoading, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, 390, 40));
+
+        jLLoadingBar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/loadingscreen12.png"))); // NOI18N
+        jPLoadingScreen.add(jLLoadingBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 400, 120));
+
+        jLLoadingBar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/loadingscreen22.png"))); // NOI18N
+        jPLoadingScreen.add(jLLoadingBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 390, -1));
+
+        jLLoadingBar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/loadingscreen33.png"))); // NOI18N
+        jPLoadingScreen.add(jLLoadingBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 290, 400, -1));
+
+        jLLoadingScreenBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/88298011cbb1b92aa9d2c1c7d9c1edf3 (1).jpg"))); // NOI18N
+        jLLoadingScreenBG.setMaximumSize(new java.awt.Dimension(1920, 800));
+        jPLoadingScreen.add(jLLoadingScreenBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPStartScreen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPLoadingScreen, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPStartScreen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPLoadingScreen, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jPBLoadingStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jPBLoadingStateChanged
+            // TODO add your handling code here:
+    }//GEN-LAST:event_jPBLoadingStateChanged
 
     /**
      * @param args the command line arguments
@@ -72,6 +105,7 @@ public class PvZ extends javax.swing.JFrame {
                 if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+                    
                 }
             }
         } catch (ClassNotFoundException ex) {
@@ -94,7 +128,13 @@ public class PvZ extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLLoadingBar1;
+    private javax.swing.JLabel jLLoadingBar2;
+    private javax.swing.JLabel jLLoadingBar3;
+    private javax.swing.JLabel jLLoadingScreenBG;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPStartScreen;
+    private javax.swing.JProgressBar jPBLoading;
+    private javax.swing.JPanel jPLoadingScreen;
     // End of variables declaration//GEN-END:variables
+    
 }
